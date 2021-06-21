@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS new feature</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        .section {
+            font-size: 1.4em;
+            letter-spacing: 0.05em;
+            line-height: 1.5em;
+        }
+        .section h2, .section h3 {
+            text-align: center;
+            margin: 0;
+            font-weight: normal;
+        }
+        .section__header {
+             position: sticky;
+             top: 0;
+             padding: 1em;
+             color: #a99160;
+             background: #171717;
+         }
+        .section__content {
+             padding: 1em;
+             display: flex;
+             justify-content: center;
+
+        }
+        .section .section__content > div {
+            max-width: 992px;
+        }
+        .snapSection {
+            scroll-snap-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #de5448;
+            color: #fff;
+            font-size: 3em;
+        }
+        .bg-blue {
+            background: #4267b2;
+        }
+
+        .bg-green {
+            background: #4CAF50;
+        }
+
+        .numberInputbox {
+            display: block;
+        }
+        .numberInputbox:in-range {
+            background-color: #4cae00;
+        }
+        .numberInputbox:out-of-range {
+            background-color: #de1a09;
+            border-color: #8d1306;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="h2">sticky position</div>
+
+        <article class="article">
+
+            <section class="section">
+                <div class="section__header">
+                    <h2>
+                        Section #1 Header
+                    </h2>
+                </div>
+
+                <div class="section__content">
+                    <div>
+                        <h3>
+                            Section #1
+                        </h3>
+
+                        <p>
+                            The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements.
+                        </p>
+
+                        <p>
+                            This value always creates a new stacking context. Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor. This effectively inhibits any "sticky" behavior (see the Github issue on W3C CSSWG).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section__header">
+                    <h2>
+                        Section #2 Header
+                    </h2>
+                </div>
+
+                <div class="section__content">
+                    <div>
+                        <h3>
+                            Section #2
+                        </h3>
+
+                        <p>
+                            The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements.
+                        </p>
+
+                        <p>
+                            This value always creates a new stacking context. Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor. This effectively inhibits any "sticky" behavior (see the Github issue on W3C CSSWG).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section__header">
+                    <h2>
+                        Section #3 Header
+                    </h2>
+                </div>
+
+                <div class="section__content">
+                    <div>
+                        <h3>
+                            Section #3
+                        </h3>
+
+                        <p>
+                            The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements.
+                        </p>
+
+                        <p>
+                            This value always creates a new stacking context. Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor. This effectively inhibits any "sticky" behavior (see the Github issue on W3C CSSWG).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section__header">
+                    <h2>
+                        Section #4 Header
+                    </h2>
+                </div>
+
+                <div class="section__content">
+                    <div>
+                        <h3>
+                            Section #4
+                        </h3>
+
+                        <p>
+                            The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements.
+                        </p>
+
+                        <p>
+                            This value always creates a new stacking context. Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor. This effectively inhibits any "sticky" behavior (see the Github issue on W3C CSSWG).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <div class="h2">Scroll Snap</div>
+
+        <div style="height: 100vh; overflow: auto; scroll-snap-type: y mandatory;">
+            <div class="section snapSection">
+                Content 1
+            </div>
+
+            <div class="section snapSection bg-blue">
+                Content 2
+            </div>
+
+            <div class="section snapSection bg-green">
+                Content 3
+            </div>
+
+            <div class="section snapSection">
+                Content 4
+            </div>
+
+            <div class="section snapSection bg-blue">
+                Content 5
+            </div>
+        </div>
+
+        <div class="h2">`:in-range` and `:out-of-range` pseudo-classes </div>
+
+        <div>
+            <label for="numberInput1">Values between 1 and 10 are valid.</label>
+            <input id="numberInput1" class="numberInputbox" type="number" min="1" max="10" value="8"/>
+            <label for="numberInput2">Values between 1 and 10 are valid.</label>
+            <input id="numberInput2" class="numberInputbox" type="number" min="1" max="10" value="12"/>
+        </div>
+
+        <div class="h2">Fancy text</div>
+
+        <div>Use the background-clip property to create beautiful headlines.</div>
+        <div>利用文字把图片裁剪</div>
+
+        <div style="background: blue url('https://picsum.photos/id/1015/200/300');background-clip: text;
+  -webkit-background-clip: text; color: transparent; margin-top: 20px; font-size: 86px;">
+            CSS IS AWESOME 强大
+        </div>
+
+    </div>
+
+</body>
+</html>
