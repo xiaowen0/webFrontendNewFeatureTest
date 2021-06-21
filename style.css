@@ -1,0 +1,19 @@
+.page {
+    min-height: 100vh;
+    padding-bottom: 54px;
+}
+
+.h2 {
+    font-size: 150%;
+    font-weight: bold;
+}
+.h2:nth-child(n+2)
+{
+    margin-top: 36px;
+}
+.meter {
+    display: block;
+}
+.inputbox {
+    width: 100%;
+}

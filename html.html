@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML new feature</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="page">
+
+        <div class="h2">ol tag start attribute (set start="11")</div>
+        <ol start="11">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>DOM</li>
+        </ol>
+
+        <div class="h2">meter tag</div>
+
+        <div>
+
+            <div>example: set low="30" high="75"</div>
+
+            <label for="meter1">Low</label>
+            <meter id="meter1" class="meter" min="0" max="100" low="30" high="75" optimum="80" value="25"></meter>
+
+            <label for="meter2">Medium</label>
+            <meter id="meter2" class="meter" min="0" max="100" low="30" high="75" optimum="80" value="50"></meter>
+
+            <label for="meter3">High</label>
+            <meter id="meter3" class="meter" min="0" max="100" low="30" high="75" optimum="80" value="80"></meter>
+
+            <label for="meter4">Dynamic</label>
+            <meter id="meter4" class="meter" min="0" max="100" low="30" high="75" optimum="80" value="80"></meter>
+
+        </div>
+
+        <div class="h2">input native search with datalist tag</div>
+        <div>
+            <input list="items"/>
+            <datalist id="items">
+                <option value="apple">
+                <option value="bus">
+                <option value="cat">
+                <option value="dog">
+                <option value="english">
+                <option value="fat">
+                <option value="good">
+                <option value="hot">
+                <option value="hit">
+                <option value="jump">
+                <option value="kill">
+                <option value="love">
+                <option value="mini">
+                <option value="quit">
+                <option value="ride">
+                <option value="sax">
+                <option value="talk">
+                <option value="use">
+                <option value="window">
+                <option value="yes">
+                <option value="zoo">
+            </datalist>
+        </div>
+
+        <div class="h2">details tag</div>
+        <div>
+            <details>
+                <summary>
+                    Click me to see more details (summary tag)
+                </summary>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut eum perferendis eius. Adipisci velit et similique earum quas illo odio rerum optio, quis, expedita assumenda enim dicta aliquam porro maxime minima sed a ullam, aspernatur corporis.
+                </p>
+            </details>
+        </div>
+
+        <div class="h2">mark tag</div>
+
+        <div>
+            Don't forget to be <mark>awsome</mark> today.
+        </div>
+
+        <div class="h2">input[type="search"]</div>
+
+        <div>
+            <label>input text</label>
+            <div>
+                <input type="text" class="inputbox"/>
+            </div>
+            <label>input search</label>
+            <div>
+                <input type="search" class="inputbox"/>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        window.setInterval(() => {
+            let meter4 = document.getElementById("meter4");
+            let value = meter4.value;
+
+            let increment = Math.floor(Math.random() * 20);
+            let isReduce = Math.floor(Math.random() * 2);
+
+            value = isReduce ? value - increment : value + increment;
+            value < 0 ? value = 0 : null;
+            value > 100 ? value = 100 : null;
+            meter4.value = value;
+        }, 1000);
+    </script>
+
+</body>
+</html>
